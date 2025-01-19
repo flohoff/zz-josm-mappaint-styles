@@ -1,0 +1,52 @@
+way|z16-[highway=residential],
+way|z16-[highway=unclassified],
+way|z16-[highway=primary],
+way|z16-[highway=primary_link],
+way|z16-[highway=secondary],
+way|z16-[highway=secondary_link],
+way|z16-[highway=tertiary],
+way|z16-[highway=tertiary_link]
+ {text-color: red;
+  text: concat(cond(!has_tag_key("zone:traffic"), concat(" ZT "), ""),
+        cond(!(has_tag_key("maxspeed") || (has_tag_key("maxspeed:forward") && has_tag_key("maxspeed:backward"))), concat(" MS "), ""),
+        cond(!has_tag_key("maxspeed:type"), concat(" MT "), ""),
+        cond(!has_tag_key("surface"), concat(" SU "), ""),
+        cond(!has_tag_key("width"), concat(" WI "), ""),
+        cond(!has_tag_key("lit"), concat(" LI "), ""),
+        cond(!has_tag_key("lane_markings"), concat(" LM "), ""),
+        cond(!has_tag_key("shoulder"), concat(" SH "), ""),
+        cond(!(has_tag_key("cycleway") || has_tag_key("cycleway:both") || (has_tag_key("cycleway:left") && has_tag_key("cycleway:right"))), concat(" CW "), ""),
+        cond(!(has_tag_key("sidewalk") || (has_tag_key("sidewalk:left") && has_tag_key("sidewalk:right"))), concat(" SW "), "")
+	);
+ z-index:4.0;}
+
+way|z16-[highway=living_street]
+ {text-color: red;
+  text: concat(cond(!has_tag_key("zone:traffic"), concat(" ZT "), ""),
+        cond(!has_tag_key("width"), concat(" WI "), ""),
+        cond(!has_tag_key("lit"), concat(" LI "), ""),
+        cond(has_tag_key("maxspeed"), concat(" MS "), ""),
+        cond(has_tag_key("maxspeed:type"), concat(" MT "), ""),
+        cond(!has_tag_key("surface"), concat(" SU "), ""));
+ z-index:4.0;}
+
+way|z16-[highway=path],
+way|z16-[highway=footway],
+way|z16-[highway=cycleway]
+ {text-color: red;
+  text: concat(
+        cond(!has_tag_key("width"), concat(" WI "), ""),
+        cond(!has_tag_key("lit"), concat(" LI "), ""),
+        cond(!has_tag_key("surface"), concat(" SU "), ""),
+        cond(!has_tag_key("segregated"), concat(" SE "), "")
+	);
+ z-index:4.0;}
+
+way|z16-[highway=service]
+ {text-color: red;
+  text: concat(
+        cond(!has_tag_key("width"), concat(" WI "), ""),
+        cond(!has_tag_key("lit"), concat(" LI "), ""),
+        cond(!has_tag_key("surface"), concat(" SU "), "")
+	);
+ z-index:4.0;}

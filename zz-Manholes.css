@@ -1,0 +1,15 @@
+node|z14-[man_made=manhole][manhole=sewer][operator:type=public] {
+	icon-image: "icons/manhole-green-dot.svg";
+	z-index:4.0;
+}
+
+node|z14-[man_made=manhole][manhole=sewer][operator:type=private] {
+	icon-image: "icons/manhole-yellow-dot.svg";
+	z-index:4.0;
+}
+
+node|z14-[man_made=manhole][manhole=drain] {
+	icon-image: "icons/drain.svg";
+	z-index:4.0;
+}
+

@@ -1,0 +1,10 @@
+area|z14-[building][!"addr:housenumber"][!"noaddress"] {
+	text-color: red;
+	text-position: center;
+	text: concat("Ad");
+}
+area|z14-[building]["addr:housenumber"]["noaddress"] {
+	text-color: red;
+	text-position: center;
+	text: concat("!Ad");
+}

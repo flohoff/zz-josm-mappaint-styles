@@ -1,0 +1,21 @@
+node|z14-[traffic_sign],
+node|z14-[emergency=fire_hydrant],
+node|z14-[amenity=vending_machine],
+node|z14-[amenity=bench],
+node|z14-[amenity=shelter],
+node|z14-[amenity=post_box],
+node|z14-[advertising=poster_box],
+node|z14-[public_transport=platform],
+node|z14-[highway=street_lamp],
+node|z14-[highway=traffic_calming],
+node|z14-[marker=post],
+node|z14-[marker=plate],
+node|z14-[barrier],
+node|z14-[man_made=street_cabinet] {
+  text-color: red;
+  font-weight: bold;
+  text-offset-y: 20;
+  text-offset-x: -12;
+  text: cond(!has_tag_key("mapillary"), "!MA", "");
+  z-index:5.0;
+}

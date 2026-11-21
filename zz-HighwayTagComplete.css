@@ -15,6 +15,7 @@ way|z16-[highway=tertiary_link]
         cond(!has_tag_key("lit"), concat(" LI "), ""),
         cond(!has_tag_key("lane_markings"), concat(" LM "), ""),
         cond(!has_tag_key("shoulder"), concat(" SH "), ""),
+        cond(!has_tag_key("smoothness"), concat(" SM "), ""),
         cond(!(has_tag_key("cycleway") || has_tag_key("cycleway:both") || (has_tag_key("cycleway:left") && has_tag_key("cycleway:right"))), concat(" CW "), ""),
         cond(!(has_tag_key("sidewalk") || (has_tag_key("sidewalk:left") && has_tag_key("sidewalk:right"))), concat(" SW "), "")
 	);
@@ -27,7 +28,8 @@ way|z16-[highway=living_street]
         cond(!has_tag_key("lit"), concat(" LI "), ""),
         cond(has_tag_key("maxspeed"), concat(" MS "), ""),
         cond(has_tag_key("maxspeed:type"), concat(" MT "), ""),
-        cond(!has_tag_key("surface"), concat(" SU "), ""));
+        cond(!has_tag_key("surface"), concat(" SU "), ""),
+        cond(!has_tag_key("smoothness"), concat(" SM "), ""));
  z-index:4.0;}
 
 way|z16-[highway=path],
@@ -38,6 +40,7 @@ way|z16-[highway=cycleway]
         cond(!has_tag_key("width"), concat(" WI "), ""),
         cond(!has_tag_key("lit"), concat(" LI "), ""),
         cond(!has_tag_key("surface"), concat(" SU "), ""),
+        cond(!has_tag_key("smoothness"), concat(" SM "), ""),
         cond(!has_tag_key("segregated"), concat(" SE "), "")
 	);
  z-index:4.0;}
@@ -47,6 +50,7 @@ way|z16-[highway=service]
   text: concat(
         cond(!has_tag_key("width"), concat(" WI "), ""),
         cond(!has_tag_key("lit"), concat(" LI "), ""),
-        cond(!has_tag_key("surface"), concat(" SU "), "")
+        cond(!has_tag_key("surface"), concat(" SU "), ""),
+        cond(!has_tag_key("smoothness"), concat(" SM "), "")
 	);
  z-index:4.0;}
